@@ -22,3 +22,8 @@ type Query {
   cvs: [CV!]!
   cv(id: ID!): CV
 }
+
+type Mutation {
+  createCV(name: String!, age: Int!, job: String!, userId: ID!): CV!
+  updateCV(id: ID!, name: String, age: Int, job: String): CV!
+}
