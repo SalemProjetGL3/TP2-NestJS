@@ -1,0 +1,24 @@
+type Skill {
+  id: ID!
+  name: String!
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+type CV {
+  id: ID!
+  name: String!
+  age: Int!
+  job: String!
+  user: User!
+  skills: [Skill!]!
+}
+
+type Query {
+  cvs: [CV!]!
+  cv(id: ID!): CV
+}
