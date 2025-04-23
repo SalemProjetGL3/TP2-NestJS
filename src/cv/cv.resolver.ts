@@ -76,4 +76,18 @@ export class CvResolver {
       skills: skills.filter(skill => updatedCV.skillIds.includes(skill.id)),
     };
   }
+
+  @Mutation(() => Boolean)
+  async deleteCV(
+    @Args('id') id: string,
+    @Context() ctx: { db: any }
+  ) {
+    const index = ctx.db.cvs.findIndex(cv => cv.id === id);
+    if (index === -1) {
+      throw new Error('CV not found');
+    }
+    
+    ctx.db.cvs.splice(index, 1);
+    return true;
+  }
 }
