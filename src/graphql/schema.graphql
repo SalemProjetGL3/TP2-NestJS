@@ -18,7 +18,7 @@ type CV {
   skills: [Skill!]!
 }
 
-type Query {!
+type Query {
   cvs: [CV!]!
   cv(id: Int!): CV
 }
@@ -27,4 +27,10 @@ type Mutation {
   createCV(name: String!, age: Int!, job: String!, userId: Int): CV!
   updateCV(id: Int!, name: String, age: Int, job: String): CV!
   deleteCV(id: Int!): Boolean!
+}
+
+type Subscription {
+  cvCreated: CV!
+  cvUpdated: CV!
+  cvDeleted: Int!
 }
