@@ -1,16 +1,16 @@
 type Skill {
-  id: ID!
+  id: Int!
   name: String!
 }
 
 type User {
-  id: ID!
+  id: Int!
   name: String!
   email: String!
 }
 
 type CV {
-  id: ID!
+  id: Int!
   name: String!
   age: Int!
   job: String!
@@ -18,13 +18,13 @@ type CV {
   skills: [Skill!]!
 }
 
-type Query {
+type Query {!
   cvs: [CV!]!
-  cv(id: ID!): CV
+  cv(id: Int!): CV
 }
 
 type Mutation {
-  createCV(name: String!, age: Int!, job: String!, userId: ID!): CV!
-  updateCV(id: ID!, name: String, age: Int, job: String): CV!
-  deleteCV(id: ID!): Boolean!
+  createCV(name: String!, age: Int!, job: String!, userId: Int): CV!
+  updateCV(id: Int!, name: String, age: Int, job: String): CV!
+  deleteCV(id: Int!): Boolean!
 }

@@ -1,12 +1,10 @@
 import { Field, ID, ObjectType } from '@nestjs/graphql';
-import { User } from '../database';
-import { Skill } from '../database';
+import { User } from '@/user/user.entity';
+import { Skill } from '@/skill/skill.entity';
+import { BaseEntity } from '@/common/base/base.entity';
 
 @ObjectType()
-export class CV {
-  @Field(() => ID)
-  id: string;
-
+export class CV extends BaseEntity{
   @Field()
   name: string;
 
@@ -17,10 +15,10 @@ export class CV {
   job: string;
 
   @Field(() => ID) 
-  userId: string;
+  userId: number;
 
   @Field(() => [ID]) 
-  skillIds: string[];
+  skillIds: number[];
 
   @Field(() => User, { nullable: true }) 
   user?: User;

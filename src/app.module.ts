@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { GraphqlModule } from './graphql/graphql.module';
 import { CvModule } from './cv/cv.module';
+import { User } from './user/user.entity';
 
 @Module({
   imports: [GraphqlModule, CvModule],

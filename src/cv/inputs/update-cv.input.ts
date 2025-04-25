@@ -3,7 +3,7 @@ import { InputType, Field, ID } from '@nestjs/graphql';
 @InputType()
 export class UpdateCVInput {
   @Field(() => ID)
-  id: string;
+  id: number;
 
   @Field({ nullable: true })
   name?: string;
@@ -15,5 +15,5 @@ export class UpdateCVInput {
   job?: string;
 
   @Field(() => [ID], { nullable: true })
-  skillIds?: string[];
+  skillIds?: number[];
 }

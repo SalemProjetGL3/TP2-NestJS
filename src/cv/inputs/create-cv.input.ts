@@ -12,8 +12,8 @@ export class CreateCVInput {
   job: string;
 
   @Field(() => ID)
-  userId: string;
+  userId: number;
 
   @Field(() => [ID])
-  skillIds: string[];
+  skillIds: number[];
 }
